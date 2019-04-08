@@ -1,0 +1,33 @@
+header {
+  height: 20%;
+}
+
+div {
+  background-color: rgba(20,20,20,0.6);
+  font-family: "Calibri Light";
+  font-size: 50px;
+  font-weight: 100;
+  color: white;
+}
+
+button {
+  color: white;
+  margin-bottom: 25%;
+}
+
+button:hover {
+  background-color: orange;
+}
+
+#logo {
+  height: 15%;
+  width: 12%;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

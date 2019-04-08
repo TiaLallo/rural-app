@@ -1,0 +1,26 @@
+header {
+  height: 20%;
+}
+
+div {
+  background-color: rgba(20,20,20,0.6);
+  text-align: left;
+  color: white;
+  font-family: "Calibri Light";
+}
+
+mat-checkbox {
+  color: white;
+  margin-left: 5%;
+}
+
+button {
+  margin: 1%;
+  background-color: #ffd740;
+  color: black;
+}
+
+button:hover {
+  background-color: orange;
+}
+

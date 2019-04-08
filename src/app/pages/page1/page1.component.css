@@ -1,0 +1,62 @@
+header {
+  height: 5%;
+}
+
+div{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: indianred;
+  text-align: center;
+  font-family: "Calibri Light";
+  font-weight: 100;
+  font-size: 200%;
+}
+
+p {
+  margin-bottom: 0%;
+}
+
+.guide {
+  font-size: 130%;
+  font-weight: 100;
+}
+
+table {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-left: 1%;
+}
+
+nav {
+  margin-right: 2.9%;
+}
+
+mat-slider {
+  color: black;
+  max-width: 50%;
+}
+
+button {
+  margin: 0.5%;
+  background-color: #ffd740;
+  color: black;
+}
+
+button:hover {
+  background-color: orange;
+}
+
+td {
+  padding-top: 5%;
+  padding-bottom: 2%;
+  color: black;
+  font-size: 120%;
+  font-weight: 100;
+}
+
+
+#logo {
+  margin-top: 3%;
+  margin-right: 2.9%;
+  height: 125px;
+  width: 125px;
+}
+
