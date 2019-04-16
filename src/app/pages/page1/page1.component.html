@@ -4,46 +4,43 @@
 </div>
 
 <div fxLayoutAlign="center center" class="guide">
-  <p>Muista valita arvo jokaiselle vaihtoehdolle!</p>
+  <p>Muista valita arvo kunkin sanaparin molemmille puolille!</p>
 </div>
 
-<table fxLayoutAlign="center center">
+
+<table fxLayoutAlign="center center" style="overflow-x: auto">
   <tr>
-    <td>Historia</td>
+    <td class="align">Historia</td>
     <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td> <mat-slider thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td>Nykypäivä</td>
   </tr>
   <tr>
-    <td>Katselu</td>
+    <td class="align">Katselu</td>
     <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td> <mat-slider thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td>Osallistuminen</td>
   </tr>
   <tr>
-    <td>Lepo</td>
+    <td class="align">Lepo</td>
     <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td> <mat-slider thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td>Toiminta</td>
   </tr>
   <tr>
-    <td>Taide</td>
+    <td class="align">Taide</td>
     <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td> <mat-slider thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
     <td>Viihde</td>
   </tr>
+  <nav align="center">
+    <button mat-raised-button routerLink="/page">Edellinen</button>
+    <button mat-raised-button routerLink="/page2">Seuraava</button>
+  </nav>
 </table>
 
-<div>
-<nav fxLayoutAlign="center center">
-  <button mat-raised-button routerLink="/page">Edellinen</button>
-  <button mat-raised-button routerLink="/page2">Seuraava</button>
-</nav></div>
-
 <div class="progress-bar">
-  <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
+  <mat-progress-bar mode="determinate" value="14"></mat-progress-bar>
 </div>
 
-<footer fxLayoutAlign="center center">
-</footer>
 

@@ -8,7 +8,7 @@ div{
   text-align: center;
   font-family: "Calibri Light";
   font-weight: 100;
-  font-size: 200%;
+  font-size: 190%;
 }
 
 p {
@@ -35,7 +35,7 @@ mat-slider {
 }
 
 button {
-  margin: 0.5%;
+  margin: 1%;
   background-color: #ffd740;
   color: black;
 }
@@ -45,9 +45,13 @@ button:hover {
 }
 
 td {
-  padding-top: 5%;
+  padding-top: 4%;
   padding-bottom: 2%;
   color: black;
   font-size: 120%;
   font-weight: 100;
+}
+
+.align {
+  text-align: right;
 }

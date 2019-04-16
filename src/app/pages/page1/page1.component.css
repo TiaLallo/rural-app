@@ -8,12 +8,12 @@ div{
   text-align: center;
   font-family: "Calibri Light";
   font-weight: 100;
-  font-size: 200%;
+  font-size: 190%;
 }
 
 p {
-  margin-bottom: 0%;
-}
+    margin-bottom: 0%;
+  }
 
 .guide {
   font-size: 130%;
@@ -22,20 +22,14 @@ p {
 
 table {
   background-color: rgba(255, 255, 255, 0.9);
-  padding-left: 1%;
-}
-
-nav {
-  margin-right: 2.9%;
 }
 
 mat-slider {
   color: black;
-  max-width: 50%;
 }
 
 button {
-  margin: 0.5%;
+  margin: 1%;
   background-color: #ffd740;
   color: black;
 }
@@ -45,18 +39,14 @@ button:hover {
 }
 
 td {
-  padding-top: 5%;
+  padding-top: 4%;
   padding-bottom: 2%;
   color: black;
   font-size: 120%;
   font-weight: 100;
 }
 
-
-#logo {
-  margin-top: 3%;
-  margin-right: 2.9%;
-  height: 125px;
-  width: 125px;
+.align {
+  text-align: right;
 }
 

@@ -1,0 +1,15 @@
+header {
+  height: 20%;
+}
+
+div {
+  background-color: rgba(20,20,20,0.6);
+  font-family: "Calibri Light";
+  font-size: 200%;
+  font-weight: 100;
+  color: white;
+}
+
+button {
+  margin-bottom: 20%;
+}

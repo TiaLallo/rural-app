@@ -20,6 +20,7 @@ import { Page4Component } from './pages/page4/page4.component';
 import { Page5Component } from './pages/page5/page5.component';
 import { Page6Component } from './pages/page6/page6.component';
 import { Page7Component } from './pages/page7/page7.component';
+import { FinalComponent } from './pages/final/final.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Rural Explorer'}},
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
   {path: 'page5', component: Page5Component},
   {path: 'page6', component: Page6Component},
   {path: 'page7', component: Page7Component},
+  {path: 'final', component: FinalComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
   ];
 
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     Page4Component,
     Page5Component,
     Page6Component,
-    Page7Component
+    Page7Component,
+    FinalComponent
   ],
   imports: [
     BrowserModule,
