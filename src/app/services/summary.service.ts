@@ -10,20 +10,20 @@ export class SummaryService {
 
   constructor(private summaryHttpService: SummaryHttpService) {
 
-    getSummary(): Observable<Summary> {
-      return this.summaryHttpService.get();
+  }
+    getSummary(id): Observable<Summary> {
+      return this.summaryHttpService.get(id);
     }
 
-    getAllSummaries(): Observable<Summary> {
+    getAllSummaries(): Observable<Summary[]> {
       return this.summaryHttpService.getAll();
     }
 
-    createSummary(Summary): Observable<Summary> {
-      return this.summaryHttpService.post(Summary);
+    createSummary(summary): Observable<Summary> {
+      return this.summaryHttpService.post(summary);
     }
 
-    updateSummary(Summary): Observable<Summary> {
-      return this.summaryHttpService.put(Summary);
+    updateSummary(id, summary): Observable<Summary> {
+      return this.summaryHttpService.put(id, summary);
     }
-  }
 }

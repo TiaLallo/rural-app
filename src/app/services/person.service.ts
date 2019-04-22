@@ -11,11 +11,18 @@ export class PersonService {
   constructor(private httpService: HttpService) {
   }
 
-  getPerson(): Observable<Person> {
-    return this.httpService.get();
+  getPerson(id): Observable<Person> {
+    return this.httpService.get(id);
   }
 
-  getPersonId(): Observable<Person[]> {
+  getAllPerson(): Observable<Person[]> {
     return this.httpService.getAll();
+  }
+
+  updatePerson(id, person): Observable<Person> {
+    return this.httpService.put(id, person);
+  }
+  createPerson(person): Observable<Person> {
+    return this.httpService.post(person);
   }
 }

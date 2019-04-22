@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiEndpointUrl: ''
+  apiEndpointUrl: 'https://ruralapi2019v1.azurewebsites.net'
 };
 
 /*

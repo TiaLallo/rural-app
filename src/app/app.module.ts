@@ -22,6 +22,15 @@ import { Page6Component } from './pages/page6/page6.component';
 import { Page7Component } from './pages/page7/page7.component';
 import { FinalComponent } from './pages/final/final.component';
 import { CardComponent } from './pages/card/card.component';
+import {HttpClientModule} from '@angular/common/http';
+import {SummaryHttpService} from './services/summary-http.service';
+import {HttpService} from './services/http.service';
+import {QuestionChoiceHttpService} from './services/question-choice-http.service';
+import {QuestionHttpService} from './services/question-http.service';
+import {PersonService} from './services/person.service';
+import {QuestionService} from './services/question.service';
+import {QuestionChoiceService} from './services/question-choice.service';
+import {SummaryService} from './services/summary.service';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Rural Explorer'}},
@@ -66,9 +75,16 @@ const appRoutes: Routes = [
     MatInputModule,
     MatTableModule,
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService, PersonService,
+    QuestionService,
+  QuestionHttpService,
+    QuestionChoiceService,
+    SummaryService,
+  QuestionChoiceHttpService,
+  SummaryHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

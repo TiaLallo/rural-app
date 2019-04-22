@@ -13,12 +13,13 @@ import {Observable} from 'rxjs';
 export class QuestionService {
 
   constructor(private questionHttpService: QuestionHttpService) {
-    getQuestions(): Observable<Question> {
-      return.this.questionHttpService.get();
+  }
+
+    getQuestion(id): Observable<Question> {
+      return this.questionHttpService.get(id);
     }
 
-    gerAllQuestions(): Observable<Question> {
-      return.this.questionHttpService.getAll();
+    gerAllQuestions(): Observable<Question[]> {
+      return this.questionHttpService.getAll();
     }
-  }
 }
