@@ -31,6 +31,7 @@ import {PersonService} from './services/person.service';
 import {QuestionService} from './services/question.service';
 import {QuestionChoiceService} from './services/question-choice.service';
 import {SummaryService} from './services/summary.service';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Rural Explorer'}},
@@ -76,7 +77,8 @@ const appRoutes: Routes = [
     MatTableModule,
     MatProgressBarModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpService, PersonService,
     QuestionService,

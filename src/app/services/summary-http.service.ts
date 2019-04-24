@@ -13,7 +13,7 @@ export class SummaryHttpService {
   url: string;
 
   constructor(private httpClient: HttpClient) {
-    this.url = environment.apiEndpointUrl + '/api/summary';
+    this.url = environment.apiEndpointUrl + '/api/summaries';
   }
 
   get(id): Observable<Summary> {
@@ -29,7 +29,8 @@ export class SummaryHttpService {
   }
 
   post(summary): Observable<Summary> {
-    return this.httpClient.get(this.url).pipe(map(response => {
+    return this.httpClient.post(this.url, summary).pipe(map(response => {
+      console.log(summary + 'test')
       return response as Summary;
     }));
   }
