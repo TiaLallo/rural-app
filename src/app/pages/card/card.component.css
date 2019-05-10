@@ -5,3 +5,7 @@ header {
 .card {
   max-width: 30%;
 }
+
+button:hover {
+  background-color: #80e38e;
+}

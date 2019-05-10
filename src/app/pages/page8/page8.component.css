@@ -3,7 +3,7 @@ header {
 }
 
 div{
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
   color: indianred;
   text-align: center;
   font-family: "Calibri Light";
@@ -19,4 +19,17 @@ button {
 
 button:hover {
   background-color: orange;
+}
+
+mat-form-field {
+  font-size: 90%;
+}
+
+
+.top {
+  margin-top: 25%;
+}
+
+.bottom {
+  margin-bottom: 10%;
 }
