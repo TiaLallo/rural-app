@@ -19,7 +19,7 @@ export class QuestionService {
       return this.questionHttpService.get(id);
     }
 
-    gerAllQuestions(): Observable<Question[]> {
+    getAllQuestions(): Observable<Question[]> {
       return this.questionHttpService.getAll();
     }
 }

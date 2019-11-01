@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {SummaryService} from '../../services/summary.service';
 import {QuestionChoiceService} from '../../services/question-choice.service';
+import {Question} from '../../Person/question';
 import {SummaryHttpService} from '../../services/summary-http.service';
 import {Router} from '@angular/router';
 import {Summary} from '../../Person/summary';
 import {QuestionChoice} from '../../Person/question-choice';
+import {QuestionService} from '../../services/question.service';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -14,17 +16,20 @@ import {Observable} from 'rxjs';
 })
 export class Page1Component implements OnInit {
 
-  testQuestion: QuestionChoice;
-  testText: string;
+  testQuestion: Question;
+  testQChoice: QuestionChoice;
 
   newSummary: Summary;
   testSummary: Summary;
 
-  constructor(private summaryService: SummaryService, private questionService: QuestionChoiceService) {
+  constructor(private summaryService: SummaryService, private questionService: QuestionService, private qChoiceService: QuestionChoiceService) {
 
-    this.questionService.getChoice(1).subscribe(response => {
-      this.testQuestion = response;
-      this.testText = this.testQuestion.leftTitle;
+    this.qChoiceService.getChoice(1).subscribe(response => {
+      this.testQChoice = response;
+    });
+
+    this.questionService.getQuestion(1).subscribe(res =>{
+      this.testQuestion = res;
     });
 
     //newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
