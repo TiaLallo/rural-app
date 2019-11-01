@@ -1,3 +1,5 @@
+import {QuestionChoice} from './question-choice';
+
 export class Question {
   QuestionId: number;
   TitleFI: string;

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiEndpointUrl: 'https://ruralapi2019v1.azurewebsites.net'
+  // apiEndpointUrl: 'https://ruralapi2019v1.azurewebsites.net'
+  apiEndpointUrl: 'https://localhost:44304',
+  apiEnabled: true
 };
 
 /*

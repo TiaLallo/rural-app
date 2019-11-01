@@ -1,13 +1,13 @@
 export class QuestionChoice {
-  QuestionChoiceId: number;
-  LeftTitle: string;
-  RightTitle: string;
-  QuestionId: number;
+  questionChoiseId: number;
+  leftTitle: string;
+  rightTitle: string;
+  questionId: number;
 
-  constructor(QuestionChoiceId?: number, LeftTitle?: string, RightTitle?: string, QuestionId?: number){
-    this.QuestionChoiceId = QuestionChoiceId;
-    this.LeftTitle = LeftTitle;
-    this.RightTitle = RightTitle;
-    this.QuestionId = QuestionId;
+  constructor(questionChoiseId?: number, leftTitle?: string, rightTitle?: string, questionId?: number){
+    this.questionChoiseId = questionChoiseId;
+    this.leftTitle = leftTitle;
+    this.rightTitle = rightTitle;
+    this.questionId = questionId;
   }
 }
