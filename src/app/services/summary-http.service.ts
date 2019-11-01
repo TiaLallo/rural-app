@@ -28,9 +28,9 @@ export class SummaryHttpService {
     }));
   }
 
-  post(summary): Observable<Summary> {
+  post(summary: Summary): Observable<Summary> {
     return this.httpClient.post(this.url, summary).pipe(map(response => {
-      console.log(summary + 'test')
+      console.log(summary + 'test');
       return response as Summary;
     }));
   }
