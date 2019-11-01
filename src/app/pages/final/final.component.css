@@ -12,4 +12,10 @@ div {
 
 button {
   margin-bottom: 20%;
+  background-color: #ffd740;
+  color: black;
+}
+
+button:hover {
+  background-color: orange;
 }

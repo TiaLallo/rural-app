@@ -32,9 +32,10 @@ import {QuestionService} from './services/question.service';
 import {QuestionChoiceService} from './services/question-choice.service';
 import {SummaryService} from './services/summary.service';
 import {FormsModule} from '@angular/forms';
+import { Page8Component } from './pages/page8/page8.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent, data: {title: 'Rural Explorer'}},
+  {path: 'home', component: HomeComponent, data: {title: 'Matkailukysely'}},
   {path: 'page', component: PageComponent},
   {path: 'page1', component: Page1Component},
   {path: 'page2', component: Page2Component},
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
   {path: 'page5', component: Page5Component},
   {path: 'page6', component: Page6Component},
   {path: 'page7', component: Page7Component},
+  {path: 'page8', component: Page8Component},
   {path: 'alert', component: CardComponent},
   {path: 'final', component: FinalComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
@@ -61,7 +63,8 @@ const appRoutes: Routes = [
     Page6Component,
     Page7Component,
     FinalComponent,
-    CardComponent
+    CardComponent,
+    Page8Component
   ],
   imports: [
     BrowserModule,

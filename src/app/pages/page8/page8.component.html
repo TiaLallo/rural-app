@@ -1,0 +1,38 @@
+<header></header>
+<div fxLayoutAlign="center center">
+  <p>Sinua ei voida tunnistaa antamiesi tietojen perusteella.</p>
+</div>
+
+<div fxLayoutAlign="center center">
+  <tr>
+    <mat-form-field class="top">
+      <mat-select placeholder="Sukupuoli" required>
+        <mat-option value="option">Nainen</mat-option>
+        <mat-option value="option">Mies</mat-option>
+        <mat-option value="option">Muu</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </tr>
+  <tr>
+    <mat-form-field>
+      <input matInput type="number" max="99" placeholder="Ikä" min="0" required>
+    </mat-form-field>
+  </tr>
+  <tr>
+    <mat-form-field class="bottom">
+      <mat-select placeholder="Kansallisuus" required>
+        <mat-option value="suomi">Suomi</mat-option>
+        <mat-option value="venäjä">Venäjä</mat-option>
+        <mat-option value="saksa">Saksa</mat-option>
+        <mat-option value="ruotsi">Ruotsi</mat-option>
+        <mat-option value="other">Muu</mat-option>
+      </mat-select>
+    </mat-form-field></tr>
+</div>
+
+<div>
+  <nav align="center">
+    <button mat-raised-button routerLink="/page7">Edellinen</button>
+    <button mat-raised-button routerLink="/alert">Tallenna</button>
+  </nav>
+</div>

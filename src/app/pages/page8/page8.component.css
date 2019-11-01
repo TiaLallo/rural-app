@@ -21,12 +21,15 @@ button:hover {
   background-color: orange;
 }
 
-p {
-  max-width: 40%;
-  font-size: 120%;
-  margin-bottom: 2%;
+mat-form-field {
+  font-size: 90%;
 }
 
-tr {
-  font-size: 120%;
+
+.top {
+  margin-top: 25%;
+}
+
+.bottom {
+  margin-bottom: 10%;
 }
