@@ -11,26 +11,26 @@
 <table fxLayoutAlign="center center">
   <tr>
     <td class="align">Historia</td>
-    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
-    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
+    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
+    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
     <td>Nykypäivä</td>
   </tr>
   <tr>
     <td class="align">Katselu</td>
-    <td><mat-slider [(ngModel)]="this.newSummary.LeftValue" invert thumbLabel min="0" max="10" step="1" value="1" (valueChange)="sendAnswer()"></mat-slider></td>
-    <td> <mat-slider [(ngModel)]="this.newSummary.RightValue" thumbLabel min="0" max="10" step="1" value="1" (valueChange)="sendAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary.LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
+    <td> <mat-slider [(ngModel)]="this.newSummary.RightValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
     <td>Osallistuminen</td>
   </tr>
   <tr>
     <td class="align">Lepo</td>
-    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="1" ></mat-slider></td>
-    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="1" (valueChange)="sendAnswer()"></mat-slider></td>
+    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
     <td>Toiminta</td>
   </tr>
   <tr>
     <td class="align">Taide</td>
-    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
-    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="1"></mat-slider></td>
+    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
+    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
     <td>Viihde</td>
   </tr>
   <nav align="center">
