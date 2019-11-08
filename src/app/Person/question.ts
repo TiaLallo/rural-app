@@ -1,14 +1,14 @@
-import {QuestionChoice} from './question-choice';
+
 
 export class Question {
-  QuestionId: number;
-  TitleFI: string;
-  TitleEN: string;
+  questionId: number;
+  title_FI: string;
+  title_EN: string;
 
   // @ts-ignore
-  constructor(QuestionId?: number, TitleFI?: string, TitleEN?: string) {
-    this.QuestionId = QuestionId;
-    this.TitleFI = TitleFI;
-    this.TitleEN = TitleEN;
+  constructor(questionId?: number, title_FI?: string, title_EN?: string) {
+    this.questionId = questionId;
+    this.title_FI = title_FI;
+    this.title_EN = title_EN;
   }
 }
