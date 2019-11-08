@@ -14,7 +14,7 @@ import { Page2Component } from './pages/page2/page2.component';
 import {MatSelectModule} from '@angular/material';
 import { PageComponent } from './pages/page/page.component';
 import {MatInputModule} from '@angular/material';
-import {MatTableModule} from '@angular/material';
+import {MatTableModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
 import { Page3Component } from './pages/page3/page3.component';
 import { Page4Component } from './pages/page4/page4.component';
 import { Page5Component } from './pages/page5/page5.component';
@@ -33,10 +33,17 @@ import {QuestionChoiceService} from './services/question-choice.service';
 import {SummaryService} from './services/summary.service';
 import {FormsModule} from '@angular/forms';
 import { Page8Component } from './pages/page8/page8.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { LoginComponent } from './user/login/login.component';
+import { AdminViewComponent } from './user/login/admin-view/admin-view.component';
+import {AuthService} from './user/services/auth.service';
+import {TokenService} from './user/services/token.service';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Matkailukysely'}},
   {path: 'page', component: PageComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'page1', component: Page1Component},
   {path: 'page2', component: Page2Component},
   {path: 'page3', component: Page3Component},
@@ -64,7 +71,10 @@ const appRoutes: Routes = [
     Page7Component,
     FinalComponent,
     CardComponent,
-    Page8Component
+    Page8Component,
+    MainNavComponent,
+    LoginComponent,
+    AdminViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,15 +91,24 @@ const appRoutes: Routes = [
     MatProgressBarModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
-  providers: [HttpService, PersonService,
+  providers: [
+    HttpService,
+    PersonService,
     QuestionService,
-  QuestionHttpService,
+    QuestionHttpService,
     QuestionChoiceService,
     SummaryService,
-  QuestionChoiceHttpService,
-  SummaryHttpService],
+    QuestionChoiceHttpService,
+    SummaryHttpService,
+    AuthService,
+    TokenService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
