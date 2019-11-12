@@ -2,3 +2,8 @@
   //admin view
   //timanttimalli tänne jne.
 </p>
+
+<button (click)="logout()" *ngIf="authService.user | async">
+  Logout
+</button>
+

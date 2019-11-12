@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
-import {UserCredentials} from '../user-credentials';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,32 +8,21 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  userCredentials: UserCredentials;
-  loginFailed: boolean;
-  errorMessage: string;
+  email: string;
+  password: string;
 
-  constructor(private authService: AuthService, private router: Router) {
-    this.userCredentials = new UserCredentials();
-    this.loginFailed = false;
-    this.errorMessage = '';
+  constructor(public authService: AuthService) {
   }
 
-  ngOnInit() {
-    this.authService.signOutUser();
+  ngOnInit(): void {
   }
 
-  onSignIn() {
-    console.log(this.userCredentials);
-    this.loginFailed = false;
-    this.errorMessage = '';
-    this.authService.signInUser(this.userCredentials).subscribe(result => {
-      this.router.navigate(['/contacts']);
-    }, error => {
-      this.userCredentials.username = '';
-      this.userCredentials.password = '';
-      this.loginFailed = true;
-      this.errorMessage = 'Wrong username or password';
-      console.error('User sign in failed');
-    });
+  login() {
+  this.authService.login(this.email, this.password);
+  this.email = this.password = '';
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

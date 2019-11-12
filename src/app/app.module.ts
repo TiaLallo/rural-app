@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatCheckboxModule, MatProgressBarModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material';
@@ -38,12 +39,16 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { LoginComponent } from './user/login/login.component';
 import { AdminViewComponent } from './user/login/admin-view/admin-view.component';
 import {AuthService} from './user/services/auth.service';
-import {TokenService} from './user/services/token.service';
+import {AuthGuard} from './user/guard/auth.guard';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireDatabase} from '@angular/fire/database';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Matkailukysely'}},
   {path: 'page', component: PageComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'admin/main', component: AdminViewComponent, canActivate: [AuthGuard], data: {target: ['main']}},
   {path: 'page1', component: Page1Component},
   {path: 'page2', component: Page2Component},
   {path: 'page3', component: Page3Component},
@@ -95,7 +100,9 @@ const appRoutes: Routes = [
     LayoutModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireAuthModule,
   ],
   providers: [
     HttpService,
@@ -107,7 +114,7 @@ const appRoutes: Routes = [
     QuestionChoiceHttpService,
     SummaryHttpService,
     AuthService,
-    TokenService
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
