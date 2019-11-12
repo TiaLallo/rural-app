@@ -1,7 +1,6 @@
 <header></header>
 <div fxLayoutAlign="center center">
- <!-- <p>Kiinnostuksen kohteet: Miksi matkalle?</p> -->
-  <p>{{testQuestion.title_FI}}</p>
+  <p *ngIf="currQuestion != undefined">{{currQuestion.title_FI}}</p>
 </div>
 
 <div fxLayoutAlign="center center" class="guide">
@@ -11,28 +10,28 @@
 
 <table fxLayoutAlign="center center">
   <tr>
-    <td class="align">{{testQChoice.leftTitle}}</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[0].leftTitle}}</td>
     <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
     <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
-    <td>{{testQChoice.rightTitle}}</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[0].rightTitle}}</td>
   </tr>
   <tr>
-    <td class="align">Katselu</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[1].leftTitle}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary.LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
     <td> <mat-slider [(ngModel)]="this.newSummary.RightValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
-    <td>Osallistuminen</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[1].rightTitle}}</td>
   </tr>
   <tr>
-    <td class="align">Lepo</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[2].leftTitle}}</td>
     <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
     <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
-    <td>Toiminta</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[2].rightTitle}}</td>
   </tr>
   <tr>
-    <td class="align">Taide</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[3].leftTitle}}</td>
     <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
     <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
-    <td>Viihde</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[3].rightTitle}}</td>
   </tr>
   <nav align="center">
     <button mat-raised-button routerLink="/page">Edellinen</button>
