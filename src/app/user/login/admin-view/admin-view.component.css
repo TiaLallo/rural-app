@@ -1,1 +1,15 @@
 
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  align-content: center;
+}
+
+div {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: darkblue;
+  text-align: center;
+  font-family: "Calibri Light";
+  font-weight: 100;
+  font-size: 50px;
+}

@@ -1,6 +1,6 @@
 
-
-<div fxLayoutAlign="center center" fxLayout="column" *ngIf="!(authService.user | async)">
+<div fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxLayoutAlign="top center">
   <p>Admin login</p>
   <input mat-input type="text" [(ngModel)]="email" placeholder="email">
   <input mat-input type="password" [(ngModel)]="password" placeholder="password">
@@ -8,5 +8,6 @@
   <button mat-fab (click)="login()">
     Login
   </button>
+  </mat-card>
 </div>
 
