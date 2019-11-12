@@ -16,20 +16,26 @@ import {Observable} from 'rxjs';
 })
 export class Page1Component implements OnInit {
 
-  testQuestion: Question;
-  testQChoice: QuestionChoice;
+  AllQuestions: Question[];
+  QChoices: QuestionChoice[];
+
+  currQuestion: Question;
+  currQChoices: QuestionChoice[];
+  filteredQChoices: QuestionChoice[];
 
   newSummary: Summary;
   testSummary: Summary;
 
   constructor(private summaryService: SummaryService, private questionService: QuestionService, private qChoiceService: QuestionChoiceService) {
 
-    this.qChoiceService.getChoice(1).subscribe(response => {
-      this.testQChoice = response;
+    this.qChoiceService.getAllChoices().subscribe(response => {
+      this.QChoices = response;
+      this.sortQuestionChoices()
     });
 
-    this.questionService.getQuestion(1).subscribe(res =>{
-      this.testQuestion = res;
+    this.questionService.getAllQuestions().subscribe(res =>{
+      this.AllQuestions = res;
+      this.currQuestion = this.AllQuestions[0];
     });
 
     //newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
@@ -47,13 +53,19 @@ export class Page1Component implements OnInit {
 
   sendAnswer()
   {
-
-    // console.log(this.newSummary);
-    // get personID and questionchoiceIDs
-    // console.log(this.testSummary);
     this.summaryService.createSummary(this.testSummary).subscribe(result => {
       this.testSummary = result;
     });
+  }
+
+  sortQuestionChoices()
+  {
+    this.filteredQChoices = this.QChoices.filter(function(objects){
+      return objects.questionId == 1
+    });
+    console.log(this.filteredQChoices);
+    this.currQChoices = this.filteredQChoices;
+    console.log(this.currQChoices);
   }
 
 }
