@@ -14,15 +14,11 @@ export class LoginComponent implements OnInit {
   constructor(public authService: AuthService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   login() {
   this.authService.login(this.email, this.password);
   this.email = this.password = '';
-  }
-
-  logout() {
-    this.authService.logout();
   }
 }

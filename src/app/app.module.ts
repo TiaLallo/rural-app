@@ -35,15 +35,12 @@ import {SummaryService} from './services/summary.service';
 import {FormsModule} from '@angular/forms';
 import { Page8Component } from './pages/page8/page8.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { LoginComponent } from './user/login/login.component';
 import { AdminViewComponent } from './user/login/admin-view/admin-view.component';
 import {AuthService} from './user/services/auth.service';
 import {AuthGuard} from './user/guard/auth.guard';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
-import {AngularFireDatabase} from '@angular/fire/database';
-
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Matkailukysely'}},
   {path: 'page', component: PageComponent},
@@ -97,7 +94,6 @@ const appRoutes: Routes = [
     MatCardModule,
     HttpClientModule,
     FormsModule,
-    LayoutModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
@@ -114,7 +110,7 @@ const appRoutes: Routes = [
     QuestionChoiceHttpService,
     SummaryHttpService,
     AuthService,
-    AuthGuard
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })
