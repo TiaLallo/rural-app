@@ -1,21 +1,44 @@
+mat-card {
+  max-height: fit-content;
+  width: 500px;
+  margin: 2em auto;
+}
+
 div {
+  width: 100%;
+  height: 100%;
+  align-content: center;
   background-color: rgba(255, 255, 255, 0.9);
-  color: darkblue;
-  text-align: center;
   font-family: "Calibri Light";
   font-weight: 100;
   font-size: 50px;
+
 }
+
+.login-button {
+  color: black;
+  margin-bottom: 10%;
+}
+.login-button:hover {
+  background-color: #fad1c5;
+}
+
 
 input {
-  margin: 10px;
-  width: 50%;
+  width: fit-content;
+  text-align: match-parent;
+  margin-bottom: 1%;
 }
 
-button {
-  color: black;
-  margin-bottom: 60%;
+mat-form-field {
+  height: fit-content;
+  width: min-content;
+  font-size: 20px;
+  font-weight: 100;
 }
-button:hover {
-  background-color: orange;
+
+p {
+  color: #7f227a;
 }
+
+

@@ -27,7 +27,8 @@ export class Page1Component implements OnInit {
   newSummary: Summary[] = [];
   testSummary: Summary;
 
-  constructor(private summaryService: SummaryService, private questionService: QuestionService, private qChoiceService: QuestionChoiceService, private router: Router) {
+  constructor(private summaryService: SummaryService, private questionService: QuestionService,
+              private qChoiceService: QuestionChoiceService, private router: Router) {
 
     this.questionNumber = 1;
 
