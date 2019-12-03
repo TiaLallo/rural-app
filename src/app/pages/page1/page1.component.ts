@@ -60,6 +60,7 @@ export class Page1Component implements OnInit {
     });
   }
 
+
   saveAnswer()
   {
     for(let i in this.newSummary)
