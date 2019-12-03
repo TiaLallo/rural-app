@@ -26,11 +26,12 @@ export class Page1Component implements OnInit {
   newSummary: Summary;
   testSummary: Summary;
 
-  constructor(private summaryService: SummaryService, private questionService: QuestionService, private qChoiceService: QuestionChoiceService) {
+  constructor(private summaryService: SummaryService, private questionService: QuestionService,
+              private qChoiceService: QuestionChoiceService) {
 
     this.qChoiceService.getAllChoices().subscribe(response => {
       this.QChoices = response;
-      this.sortQuestionChoices()
+      this.sortQuestionChoices();
     });
 
     this.questionService.getAllQuestions().subscribe(res =>{
@@ -38,7 +39,7 @@ export class Page1Component implements OnInit {
       this.currQuestion = this.AllQuestions[0];
     });
 
-    //newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
+    // newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
     this.newSummary = new Summary();
     this.testSummary = new Summary();
     this.testSummary.PersonId = 2;
@@ -51,17 +52,15 @@ export class Page1Component implements OnInit {
 
   }
 
-  sendAnswer()
-  {
+  sendAnswer() {
     this.summaryService.createSummary(this.testSummary).subscribe(result => {
       this.testSummary = result;
     });
   }
 
-  sortQuestionChoices()
-  {
-    this.filteredQChoices = this.QChoices.filter(function(objects){
-      return objects.questionId == 1
+  sortQuestionChoices() {
+    this.filteredQChoices = this.QChoices.filter(function(objects) {
+      return objects.questionId === 1;
     });
     console.log(this.filteredQChoices);
     this.currQChoices = this.filteredQChoices;
