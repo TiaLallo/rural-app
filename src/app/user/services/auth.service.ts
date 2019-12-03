@@ -21,7 +21,7 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Worked');
-        this.router.navigate(['/admin/main']);
+        this.router.navigate(['admin/main29283474367']);
       })
       .catch(err => {
         console.log('Something went wrong:', err.message);

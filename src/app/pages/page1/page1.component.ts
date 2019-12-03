@@ -59,7 +59,7 @@ export class Page1Component implements OnInit {
   }
 
   sortQuestionChoices() {
-    this.filteredQChoices = this.QChoices.filter(function(objects) {
+    this.filteredQChoices = this.QChoices.filter(function (objects) {
       return objects.questionId === 1;
     });
     console.log(this.filteredQChoices);
