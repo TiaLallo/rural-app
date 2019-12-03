@@ -1,12 +1,29 @@
 
+<div fxLayoutAlign="center center">
 
-<div fxLayoutAlign="center center" fxLayout="column" *ngIf="!(authService.user | async)">
-  <p>Admin login</p>
-  <input mat-input type="text" [(ngModel)]="email" placeholder="email">
-  <input mat-input type="password" [(ngModel)]="password" placeholder="password">
 
-  <button mat-fab (click)="login()">
+  <mat-card fxLayout="column" fxLayoutAlign="top center">
+  <p style="height: 40px;">Admin login</p>
+
+
+    <mat-form-field appearance="outline" style="height: 120px;">
+      <mat-icon class="material-icons" color="primary">email</mat-icon>
+      <input matInput type="text" [(ngModel)]="email" placeholder="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="height: 100px;">
+      <mat-icon class="material-icons" color="primary">lock</mat-icon>
+      <input matInput type="password" [(ngModel)]="password" placeholder="password">
+    </mat-form-field>
+
+    <mat-card-actions>
+    <button class="login-button" mat-raised-button routerLink="/home">
+      Back
+    </button>
+    <button class="login-button" mat-raised-button (click)="login()">
     Login
   </button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 

@@ -1,9 +1,11 @@
-<p>
-  //admin view
-  //timanttimalli tänne jne.
-</p>
 
+
+
+<div fxLayoutAlign="center center" fxLayout="column">
+  <h2>POWER BI TÄHÄN</h2>
+<mat-card fxLayout="column" fxLayoutAlign="center center">
 <button (click)="logout()" *ngIf="authService.user | async">
   Logout
 </button>
-
+</mat-card>
+</div>

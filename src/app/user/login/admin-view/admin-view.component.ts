@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import * as pbi from 'powerbi-client';
 
 @Component({
   selector: 'app-admin-view',
@@ -9,7 +10,8 @@ import {Router} from '@angular/router';
 })
 export class AdminViewComponent implements OnInit {
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) {
+  }
 
   ngOnInit() {
   }
@@ -18,5 +20,4 @@ export class AdminViewComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
-
 }
