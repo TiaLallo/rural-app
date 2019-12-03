@@ -11,31 +11,31 @@
 <table fxLayoutAlign="center center">
   <tr>
     <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[0].leftTitle}}</td>
-    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
-    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[0].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[0].LeftValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
     <td *ngIf="currQChoices != undefined">{{currQChoices[0].rightTitle}}</td>
   </tr>
   <tr>
     <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[1].leftTitle}}</td>
-    <td><mat-slider [(ngModel)]="this.newSummary.LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
-    <td> <mat-slider [(ngModel)]="this.newSummary.RightValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[1].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[1].RightValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
     <td *ngIf="currQChoices != undefined">{{currQChoices[1].rightTitle}}</td>
   </tr>
   <tr>
     <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[2].leftTitle}}</td>
-    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
-    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0" (valueChange)="sendAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[2].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[2].LeftValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
     <td *ngIf="currQChoices != undefined">{{currQChoices[2].rightTitle}}</td>
   </tr>
   <tr>
     <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[3].leftTitle}}</td>
-    <td><mat-slider invert thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
-    <td> <mat-slider thumbLabel min="0" max="10" step="1" value="0"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[3].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[3].LeftValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
     <td *ngIf="currQChoices != undefined">{{currQChoices[3].rightTitle}}</td>
   </tr>
   <nav align="center">
-    <button mat-raised-button routerLink="/page">Edellinen</button>
-    <button mat-raised-button routerLink="/page2" (input)="sendAnswer()">Seuraava</button>
+    <button mat-raised-button (click)="prevQuestions()">Edellinen</button>
+    <button mat-raised-button (click)="nextQuestions()">Seuraava</button>
   </nav>
 </table>
 
