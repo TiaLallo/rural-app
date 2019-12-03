@@ -54,14 +54,15 @@ export class Page1Component implements OnInit {
 
   sendAnswer()
   {
-    this.summaryService.createSummary(this.testSummary).subscribe(result => {
+    this.summaryService.createSummary(this.newSummary).subscribe(result => {
       this.testSummary = result;
     });
   }
 
   saveAnswer()
   {
-    for(let i in this.newSummary){
+    for(let i in this.newSummary)
+    {
       console.log(this.newSummary[i]);
     }
   }
@@ -69,11 +70,11 @@ export class Page1Component implements OnInit {
   sortQuestionChoices(questionNumber1)
   {
     if(questionNumber1 !== undefined) {
-      console.log("JEE VITTU");
+      console.log("JEE");
     }
     else{
       questionNumber1 = 1;
-      console.log("VOI VITTU");
+      console.log("VOI EI");
     }
     this.filteredQChoices = this.QChoices.filter(function(objects){
       return objects.questionId === questionNumber1;
