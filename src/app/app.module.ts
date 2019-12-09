@@ -45,7 +45,7 @@ const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Matkailukysely'}},
   {path: 'page', component: PageComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'admin/main', component: AdminViewComponent, canActivate: [AuthGuard], data: {target: ['main']}},
+  {path: 'admin/main29283474367', component: AdminViewComponent, canActivate: [AuthGuard], data: {target: ['main']}},
   {path: 'page1', component: Page1Component},
   {path: 'page2', component: Page2Component},
   {path: 'page3', component: Page3Component},
