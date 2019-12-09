@@ -12,7 +12,7 @@
   <tr>
     <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[0].leftTitle}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary[0].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
-    <td><mat-slider [(ngModel)]="this.newSummary[0].LeftValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[0].RightValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
     <td *ngIf="currQChoices != undefined">{{currQChoices[0].rightTitle}}</td>
   </tr>
   <tr>
@@ -24,13 +24,13 @@
   <tr>
     <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[2].leftTitle}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary[2].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
-    <td><mat-slider [(ngModel)]="this.newSummary[2].LeftValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[2].RightValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
     <td *ngIf="currQChoices != undefined">{{currQChoices[2].rightTitle}}</td>
   </tr>
   <tr>
     <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[3].leftTitle}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary[3].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
-    <td><mat-slider [(ngModel)]="this.newSummary[3].LeftValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[3].RightValue" thumbLabel min="0" max="10" step="1" value="0" (valueChange)="saveAnswer()"></mat-slider></td>
     <td *ngIf="currQChoices != undefined">{{currQChoices[3].rightTitle}}</td>
   </tr>
   <nav align="center">

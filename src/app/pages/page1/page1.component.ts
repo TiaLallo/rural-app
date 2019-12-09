@@ -55,9 +55,12 @@ export class Page1Component implements OnInit {
 
   sendAnswer()
   {
-    this.summaryService.createSummary(this.newSummary).subscribe(result => {
+    for(let i in this.newSummary)
+    this.summaryService.createSummary(this.newSummary[i]).subscribe(result => {
       this.testSummary = result;
     });
+
+
   }
 
 
@@ -65,6 +68,8 @@ export class Page1Component implements OnInit {
   {
     for(let i in this.newSummary)
     {
+      this.newSummary[i].QuestionChoiseId = this.currQChoices[i].questionChoiseId;
+
       console.log(this.newSummary[i]);
     }
   }
@@ -89,13 +94,20 @@ export class Page1Component implements OnInit {
   nextQuestions()
   {if(this.questionNumber == 7)
   {
-    //this.saveAnswer();
-    this.router.navigate(['/page8']);
+    this.sendAnswer();
+    this.router.navigate(['/alert']);
   }
   else {
     this.questionNumber = this.questionNumber + 1;
     this.sortQuestionChoices(this.questionNumber);
     this.currQuestion = this.AllQuestions[this.questionNumber - 1];
+
+    this.sendAnswer();
+
+    this.newSummary[0] = new Summary();
+    this.newSummary[1] = new Summary();
+    this.newSummary[2] = new Summary();
+    this.newSummary[3] = new Summary();
   }
   }
 
