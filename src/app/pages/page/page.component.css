@@ -15,11 +15,11 @@ h4 {
 }
 
 button {
-  margin-top: 1%;
+  margin: 1%;
   background-color: #ffd740;
   color: black;
 }
 
 button:hover {
-  background-color: orange;
+  background-color: #fad1c5;
 }
