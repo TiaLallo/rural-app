@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {Summary} from '../../Person/summary';
 import {QuestionChoice} from '../../Person/question-choice';
 import {QuestionService} from '../../services/question.service';
-import {forEach} from '@angular/router/src/utils/collection';
+import {SummariesService} from "../../services/summaries.service";
 
 @Component({
   selector: 'app-page1',
@@ -25,10 +25,10 @@ export class Page1Component implements OnInit {
   filteredQChoices: QuestionChoice[];
 
   newSummary: Summary[] = [];
-  testSummary: Summary;
+  savedSummaries: Summary[] = [];
 
   constructor(private summaryService: SummaryService, private questionService: QuestionService,
-              private qChoiceService: QuestionChoiceService, private router: Router) {
+              private qChoiceService: QuestionChoiceService, private router: Router, private summaServ: SummariesService) {
 
     this.questionNumber = 1;
 
@@ -37,53 +37,69 @@ export class Page1Component implements OnInit {
       this.sortQuestionChoices(this.questionNumber);
     });
 
-    this.questionService.getAllQuestions().subscribe(res =>{
+    this.questionService.getAllQuestions().subscribe(res => {
       this.AllQuestions = res;
       this.currQuestion = this.AllQuestions[this.questionNumber - 1];
     });
 
-    //newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
-    this.newSummary[0] = new Summary();
-    this.newSummary[1] = new Summary();
-    this.newSummary[2] = new Summary();
-    this.newSummary[3] = new Summary();
+    //jos aikaisemmin tallennettua dataa hakee sen että vahinko painallus takaisin ei resetoi tekemistä
+    this.summaServ.routeData().subscribe(res =>{
+      this.savedSummaries = res;
+    });
+
+    if (this.savedSummaries[0] === undefined) {
+
+      for(let i = 0; i < 4; i++) {
+        this.newSummary[i] = new Summary();
+      }
+/*      this.newSummary[1] = new Summary();
+      this.newSummary[2] = new Summary();
+      this.newSummary[3] = new Summary();*/
+    }
+    else {
+      for(let i = 0; i < 4; i++) {
+        this.newSummary[i] = this.savedSummaries[i];
+      }
+      /*
+      this.newSummary[1] = this.savedSummaries[1];
+      this.newSummary[2] = this.savedSummaries[2];
+      this.newSummary[3] = this.savedSummaries[3]; */
+    }
   }
 
   ngOnInit() {
 
   }
 
-  sendAnswer()
-  {
-    for(let i in this.newSummary)
-    this.summaryService.createSummary(this.newSummary[i]).subscribe(result => {
-      this.testSummary = result;
-    });
+  saveAnswer() {
 
+    // tarkistaa onko uutta dataa vai vanhaa ja toiminta sen mukaan
 
-  }
-
-
-  saveAnswer()
-  {
-    for(let i in this.newSummary)
-    {
+    if(this.savedSummaries[(this.questionNumber - 1) * 4] === undefined)
+    for (let i in this.newSummary) {
       this.newSummary[i].QuestionChoiseId = this.currQChoices[i].questionChoiseId;
-
-      console.log(this.newSummary[i]);
+      this.savedSummaries.push(this.newSummary[i]);
     }
+    else
+    {
+      for (let i in this.newSummary) {
+        let x = (this.questionNumber - 1) * 4;
+        this.newSummary[i].QuestionChoiseId = this.currQChoices[i].questionChoiseId;
+        this.savedSummaries[x + i] = this.newSummary[i];
+      }
+    }
+    console.log(this.savedSummaries);
   }
 
-  sortQuestionChoices(questionNumber1)
-  {
-    if(questionNumber1 !== undefined) {
-      console.log("JEE");
+  sortQuestionChoices(questionNumber1) {
+    if (questionNumber1 !== undefined) {
+      console.log("We haz problem");
+      //Add Alert?
     }
-    else{
+    else {
       questionNumber1 = 1;
-      console.log("VOI EI");
     }
-    this.filteredQChoices = this.QChoices.filter(function(objects){
+    this.filteredQChoices = this.QChoices.filter(function (objects) {
       return objects.questionId === questionNumber1;
     });
     console.log(this.filteredQChoices);
@@ -91,48 +107,70 @@ export class Page1Component implements OnInit {
     console.log(this.currQChoices);
   }
 
-  nextQuestions()
-  {if(this.questionNumber == 7)
-  {
-    this.sendAnswer();
-    this.router.navigate(['/alert']);
-  }
-  else {
-    this.questionNumber = this.questionNumber + 1;
-    this.sortQuestionChoices(this.questionNumber);
-    this.currQuestion = this.AllQuestions[this.questionNumber - 1];
-
-    this.sendAnswer();
-
-    this.newSummary[0] = new Summary();
-    this.newSummary[1] = new Summary();
-    this.newSummary[2] = new Summary();
-    this.newSummary[3] = new Summary();
-  }
-  }
-
-  prevQuestions()
-  {
-    if(this.questionNumber == 1)
+  nextQuestions() {
+    if (this.questionNumber == 2)  // real value 7, 2 for testing
     {
+      this.saveAnswer();
+
+      this.summaServ.updateSummaries(this.savedSummaries);
+      this.router.navigate(['/page8']);
+    }
+    else {
+
+      this.saveAnswer();
+
+      this.questionNumber = this.questionNumber + 1;
+      this.sortQuestionChoices(this.questionNumber);
+      this.currQuestion = this.AllQuestions[this.questionNumber - 1];
+
+
+      //Tarkistaa onko aikasemmin jo käyty seuraavissa kysymyksissä ja jos on niin lataa tallennetut vastaukset
+      if (this.savedSummaries[(this.questionNumber - 1) * 4] !== undefined) {
+        let x = (this.questionNumber - 1) * 4;
+
+        for(let i = 0; i < 4; i++) {
+          this.newSummary[i] = this.savedSummaries[x + i];
+        }
+        /*
+        this.newSummary[1] = this.savedSummaries[x + 1];
+        this.newSummary[2] = this.savedSummaries[x + 2];
+        this.newSummary[3] = this.savedSummaries[x + 3];*/
+      }
+      else
+      {
+        for(let i = 0; i < 4; i++) {
+          this.newSummary[i] = new Summary();
+        }
+        /*
+        this.newSummary[1] = new Summary();
+        this.newSummary[2] = new Summary();
+        this.newSummary[3] = new Summary();*/
+      }
+    }
+  }
+
+  prevQuestions() {
+    if (this.questionNumber == 1) {
       this.questionNumber = 1;
       this.router.navigate(['/page']);
     }
-    else
-      {
+    else {
       this.questionNumber = this.questionNumber - 1;
       this.sortQuestionChoices(this.questionNumber);
       this.currQuestion = this.AllQuestions[this.questionNumber - 1];
 
-        this.newSummary[0] = new Summary();
-        this.newSummary[1] = new Summary();
-        this.newSummary[2] = new Summary();
-        this.newSummary[3] = new Summary();
+      let x = (this.questionNumber - 1) * 4;
 
-        for(let i in this.newSummary){
-          console.log(this.newSummary[i]);
-        }
+      for(let i = 0; i < 4; i++) {
+        this.newSummary[i] = this.savedSummaries[x + i];
       }
+      /*
+      this.newSummary[1] = this.savedSummaries[x + 1];
+      this.newSummary[2] = this.savedSummaries[x + 2];
+      this.newSummary[3] = this.savedSummaries[x + 3];*/
+    }
   }
-
 }
+
+
+
