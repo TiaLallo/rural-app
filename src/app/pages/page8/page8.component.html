@@ -6,10 +6,10 @@
 <div fxLayoutAlign="center center">
   <tr>
     <mat-form-field class="top">
-      <mat-select placeholder="Sukupuoli"  required>
-        <mat-option (selectionChange)="changeSex(value)" value="Female" >Nainen</mat-option>
-        <mat-option (selectionChange)="changeSex(value)" value="Male">Mies</mat-option>
-        <mat-option (selectionChange)="changeSex(value)" value="Other">Muu</mat-option>
+      <mat-select placeholder="Sukupuoli" (selectionChange)="changeSex($event.value)"  required>
+        <mat-option value="Female" >Nainen</mat-option>
+        <mat-option value="Male">Mies</mat-option>
+        <mat-option value="Other">Muu</mat-option>
       </mat-select>
     </mat-form-field>
   </tr>
@@ -20,7 +20,7 @@
   </tr>
   <tr>
     <mat-form-field class="bottom">
-      <mat-select placeholder="Kansallisuus" (selectionChange)="changeNat(value)" required>
+      <mat-select placeholder="Kansallisuus" (selectionChange)="changeNat($event.value)" required>
         <mat-option value="FIN">Suomi</mat-option>
         <mat-option value="RUS">Venäjä</mat-option>
         <mat-option value="GER">Saksa</mat-option>

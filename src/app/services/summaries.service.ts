@@ -15,9 +15,15 @@ export class SummariesService {
 
   }
 
+  clearSummaries()
+  {
+    this.summaries = [];
+  }
+
   updateSummaries(data)
   {
     this.summaries.push(data);
+    console.log(this.summaries);
   }
 
   routeData(): Observable<Summary[]>
@@ -28,6 +34,7 @@ export class SummariesService {
   updatePerson(dataPerson)
   {
     this.person = dataPerson;
+    console.log(this.person);
   }
 
   getPerson(): Person

@@ -80,13 +80,13 @@ export class Page1Component implements OnInit {
       this.newSummary[i].QuestionChoiseId = this.currQChoices[i].questionChoiseId;
       this.savedSummaries.push(this.newSummary[i]);
     }
-    else
-    {
+    else {
       for (let i in this.newSummary) {
+      this.newSummary[i].QuestionChoiseId = this.currQChoices[i].questionChoiseId;
+    }
         let x = (this.questionNumber - 1) * 4;
-        this.newSummary[i].QuestionChoiseId = this.currQChoices[i].questionChoiseId;
-        this.savedSummaries[x + i] = this.newSummary[i];
-      }
+        this.savedSummaries.splice(x,4, this.newSummary[0], this.newSummary[1], this.newSummary[2], this.newSummary[3]);
+
     }
     console.log(this.savedSummaries);
   }
@@ -102,17 +102,18 @@ export class Page1Component implements OnInit {
     this.filteredQChoices = this.QChoices.filter(function (objects) {
       return objects.questionId === questionNumber1;
     });
-    console.log(this.filteredQChoices);
     this.currQChoices = this.filteredQChoices;
-    console.log(this.currQChoices);
   }
 
   nextQuestions() {
     if (this.questionNumber == 2)  // real value 7, 2 for testing
     {
       this.saveAnswer();
-
-      this.summaServ.updateSummaries(this.savedSummaries);
+      this.summaServ.clearSummaries();
+      for (let i in this.savedSummaries)
+      {
+        this.summaServ.updateSummaries(this.savedSummaries[i]);
+      }
       this.router.navigate(['/page8']);
     }
     else {
@@ -155,6 +156,8 @@ export class Page1Component implements OnInit {
       this.router.navigate(['/page']);
     }
     else {
+      this.saveAnswer();
+
       this.questionNumber = this.questionNumber - 1;
       this.sortQuestionChoices(this.questionNumber);
       this.currQuestion = this.AllQuestions[this.questionNumber - 1];

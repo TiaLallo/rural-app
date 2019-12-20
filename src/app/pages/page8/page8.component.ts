@@ -4,7 +4,7 @@ import {Summary} from '../../Person/summary';
 import {SummariesService} from "../../services/summaries.service";
 import {Person} from "../../Person/person";
 import {PersonService} from "../../services/person.service";
-import {validateBasis} from "@angular/flex-layout";
+import {PersonHttpService} from "../../services/person-http.service";
 
 @Component({
   selector: 'app-page8',
@@ -16,16 +16,11 @@ export class Page8Component implements OnInit {
   private summaries: Summary[] = [];
 
   private person: Person;
+  person2: Person[];
 
-  constructor(private summaryService: SummaryService, private summariesService: SummariesService, private personService: PersonService)
+  constructor(private summaryService: SummaryService, private summariesService: SummariesService, private personService: PersonService, private personhttp: PersonHttpService)
   {
     this.person = new Person();
-
-    this.personService.getAllPerson().subscribe( response => {
-      this.person.PersonId = response.length;
-      this.addPersnID();
-      }
-    )
 
     this.summariesService.routeData().subscribe(res =>
     {
@@ -58,10 +53,16 @@ export class Page8Component implements OnInit {
 
   finalData()
   {
+    this.addPersnID();
     console.log(this.person);
+    this.personService.createPerson(this.person);
     console.log(this.summaries);
     this.summariesService.updatePerson(this.person);
-    this.summariesService.updateSummaries(this.summaries);
+    this.summariesService.clearSummaries();
+    for(let i in this.summaries)
+    {
+      this.summariesService.updateSummaries(this.summaries[i]);
+    }
   }
 
 }
