@@ -52,18 +52,11 @@ export class Page1Component implements OnInit {
       for(let i = 0; i < 4; i++) {
         this.newSummary[i] = new Summary();
       }
-/*      this.newSummary[1] = new Summary();
-      this.newSummary[2] = new Summary();
-      this.newSummary[3] = new Summary();*/
     }
     else {
       for(let i = 0; i < 4; i++) {
         this.newSummary[i] = this.savedSummaries[i];
       }
-      /*
-      this.newSummary[1] = this.savedSummaries[1];
-      this.newSummary[2] = this.savedSummaries[2];
-      this.newSummary[3] = this.savedSummaries[3]; */
     }
   }
 
@@ -86,14 +79,11 @@ export class Page1Component implements OnInit {
     }
         let x = (this.questionNumber - 1) * 4;
         this.savedSummaries.splice(x,4, this.newSummary[0], this.newSummary[1], this.newSummary[2], this.newSummary[3]);
-
     }
-    console.log(this.savedSummaries);
   }
 
   sortQuestionChoices(questionNumber1) {
     if (questionNumber1 !== undefined) {
-      console.log("We haz problem");
       //Add Alert?
     }
     else {
@@ -132,20 +122,12 @@ export class Page1Component implements OnInit {
         for(let i = 0; i < 4; i++) {
           this.newSummary[i] = this.savedSummaries[x + i];
         }
-        /*
-        this.newSummary[1] = this.savedSummaries[x + 1];
-        this.newSummary[2] = this.savedSummaries[x + 2];
-        this.newSummary[3] = this.savedSummaries[x + 3];*/
       }
       else
       {
         for(let i = 0; i < 4; i++) {
           this.newSummary[i] = new Summary();
         }
-        /*
-        this.newSummary[1] = new Summary();
-        this.newSummary[2] = new Summary();
-        this.newSummary[3] = new Summary();*/
       }
     }
   }
@@ -167,10 +149,6 @@ export class Page1Component implements OnInit {
       for(let i = 0; i < 4; i++) {
         this.newSummary[i] = this.savedSummaries[x + i];
       }
-      /*
-      this.newSummary[1] = this.savedSummaries[x + 1];
-      this.newSummary[2] = this.savedSummaries[x + 2];
-      this.newSummary[3] = this.savedSummaries[x + 3];*/
     }
   }
 }

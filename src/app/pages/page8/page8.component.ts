@@ -16,7 +16,6 @@ export class Page8Component implements OnInit {
   private summaries: Summary[] = [];
 
   private person: Person;
-  person2: Person[];
 
   constructor(private summaryService: SummaryService, private summariesService: SummariesService, private personService: PersonService, private personhttp: PersonHttpService)
   {
@@ -40,23 +39,11 @@ export class Page8Component implements OnInit {
   changeSex(input)
   {
     this.person.Sex = input;
-    console.log(this.person);
-  }
-
-  addPersnID()
-  {
-    for(let i in this.summaries)
-    {
-      this.summaries[i].PersonId = this.person.PersonId;
-    }
   }
 
   finalData()
   {
-    this.addPersnID();
-    console.log(this.person);
     this.personService.createPerson(this.person);
-    console.log(this.summaries);
     this.summariesService.updatePerson(this.person);
     this.summariesService.clearSummaries();
     for(let i in this.summaries)
