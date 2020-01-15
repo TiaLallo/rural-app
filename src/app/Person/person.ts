@@ -1,12 +1,12 @@
 export class Person {
-  PersonId: number;
+  personId: number;
   Sex: string;
   Age: number;
   Nationality: string;
 
   // @ts-ignore
-  constructor(PersonId?: number, Sex?: string, Age?: number, Nationality?: string) {
-  this.PersonId = PersonId;
+  constructor(personId?: number, Sex?: string, Age?: number, Nationality?: string) {
+  this.personId = personId;
   this.Sex = Sex;
   this.Age = Age;
   this.Nationality = Nationality;

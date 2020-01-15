@@ -6,33 +6,34 @@
 <div fxLayoutAlign="center center">
   <tr>
     <mat-form-field class="top">
-      <mat-select placeholder="Sukupuoli" required>
-        <mat-option value="woman">Nainen</mat-option>
-        <mat-option value="man">Mies</mat-option>
-        <mat-option value="other">Muu</mat-option>
+      <mat-select placeholder="Sukupuoli" (selectionChange)="changeSex($event.value)"  required>
+        <mat-option value="Female" >Nainen</mat-option>
+        <mat-option value="Male">Mies</mat-option>
+        <mat-option value="Other">Muu</mat-option>
       </mat-select>
     </mat-form-field>
   </tr>
   <tr>
     <mat-form-field>
-      <input matInput type="number" max="99" placeholder="Ikä" min="0" required>
+      <input matInput [(ngModel)]="this.person.Age" type="number" max="99" placeholder="Ikä" min="0" required>
     </mat-form-field>
   </tr>
   <tr>
     <mat-form-field class="bottom">
-      <mat-select placeholder="Kansallisuus" required>
-        <mat-option value="finland">Suomi</mat-option>
-        <mat-option value="russia">Venäjä</mat-option>
-        <mat-option value="germany">Saksa</mat-option>
-        <mat-option value="sweden">Ruotsi</mat-option>
-        <mat-option value="other">Muu</mat-option>
+      <mat-select placeholder="Kansallisuus" (selectionChange)="changeNat($event.value)" required>
+        <mat-option value="FIN">Suomi</mat-option>
+        <mat-option value="RUS">Venäjä</mat-option>
+        <mat-option value="GER">Saksa</mat-option>
+        <mat-option value="SWE">Ruotsi</mat-option>
+        <mat-option value="Other">Muu</mat-option>
       </mat-select>
-    </mat-form-field></tr>
+    </mat-form-field>
+  </tr>
 </div>
 
 <div>
   <nav align="center">
-    <button mat-raised-button routerLink="/page">Edellinen</button>
-    <button mat-raised-button routerLink="/page1">Kysymyksiin!</button>
+    <button mat-raised-button routerLink="/page1">Edellinen</button>
+    <button mat-raised-button (click)="finalData()" routerLink="/alert">Valmis!</button>
   </nav>
 </div>

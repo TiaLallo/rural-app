@@ -20,7 +20,6 @@ export class SummaryService {
     }
 
     createSummary(summary): Observable<Summary> {
-      console.log(summary);
       return this.summaryHttpService.post(summary);
     }
 

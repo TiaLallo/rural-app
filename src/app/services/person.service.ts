@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Person} from '../Person/person';
-import {HttpService} from './http.service';
+import {PersonHttpService} from './person-http.service';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class PersonService {
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: PersonHttpService) {
   }
 
   getPerson(id): Observable<Person> {
