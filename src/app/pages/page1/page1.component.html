@@ -1,6 +1,9 @@
 <header></header>
-<div fxLayoutAlign="center center">
+<div *ngIf="selectedLang == 0" fxLayoutAlign="center center">
   <p *ngIf="currQuestion != undefined">{{currQuestion.title_FI}}</p>
+</div>
+<div *ngIf="selectedLang == 1" fxLayoutAlign="center center">
+  <p *ngIf="currQuestion != undefined">{{currQuestion.title_EN}}</p>
 </div>
 
 <div fxLayoutAlign="center center" class="guide">
@@ -8,30 +11,61 @@
 </div>
 
 
-<table fxLayoutAlign="center center">
+<table *ngIf="selectedLang == 0" fxLayoutAlign="center center">
   <tr>
-    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[0].leftTitle}}</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[0].leftTitle_FI}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary[0].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
     <td><mat-slider [(ngModel)]="this.newSummary[0].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
-    <td *ngIf="currQChoices != undefined">{{currQChoices[0].rightTitle}}</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[0].rightTitle_FI}}</td>
   </tr>
   <tr>
-    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[1].leftTitle}}</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[1].leftTitle_FI}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary[1].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
     <td><mat-slider [(ngModel)]="this.newSummary[1].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
-    <td *ngIf="currQChoices != undefined">{{currQChoices[1].rightTitle}}</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[1].rightTitle_FI}}</td>
   </tr>
   <tr>
-    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[2].leftTitle}}</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[2].leftTitle_FI}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary[2].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
     <td><mat-slider [(ngModel)]="this.newSummary[2].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
-    <td *ngIf="currQChoices != undefined">{{currQChoices[2].rightTitle}}</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[2].rightTitle_FI}}</td>
   </tr>
   <tr>
-    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[3].leftTitle}}</td>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[3].leftTitle_FI}}</td>
     <td><mat-slider [(ngModel)]="this.newSummary[3].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
     <td><mat-slider [(ngModel)]="this.newSummary[3].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
-    <td *ngIf="currQChoices != undefined">{{currQChoices[3].rightTitle}}</td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[3].rightTitle_FI}}</td>
+  </tr>
+  <nav align="center">
+    <button mat-raised-button (click)="prevQuestions()">Edellinen</button>
+    <button mat-raised-button (click)="nextQuestions()">Seuraava</button>
+  </nav>
+</table>
+
+<table *ngIf="selectedLang == 1" fxLayoutAlign="center center">
+  <tr>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[0].leftTitle_EN}}</td>
+    <td><mat-slider [(ngModel)]="this.newSummary[0].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[0].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[0].rightTitle_EN}}</td>
+  </tr>
+  <tr>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[1].leftTitle_EN}}</td>
+    <td><mat-slider [(ngModel)]="this.newSummary[1].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[1].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[1].rightTitle_EN}}</td>
+  </tr>
+  <tr>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[2].leftTitle_EN}}</td>
+    <td><mat-slider [(ngModel)]="this.newSummary[2].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[2].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[2].rightTitle_EN}}</td>
+  </tr>
+  <tr>
+    <td class="align" *ngIf="currQChoices != undefined">{{currQChoices[3].leftTitle_EN}}</td>
+    <td><mat-slider [(ngModel)]="this.newSummary[3].LeftValue" invert thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td><mat-slider [(ngModel)]="this.newSummary[3].RightValue" thumbLabel min="0" max="10" step="1" value="0" ></mat-slider></td>
+    <td *ngIf="currQChoices != undefined">{{currQChoices[3].rightTitle_EN}}</td>
   </tr>
   <nav align="center">
     <button mat-raised-button (click)="prevQuestions()">Edellinen</button>

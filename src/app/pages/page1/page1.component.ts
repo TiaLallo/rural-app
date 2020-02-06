@@ -16,11 +16,13 @@ import {SummariesService} from "../../services/summaries.service";
 export class Page1Component implements OnInit {
 
   public questionNumber: any;
+  private selectedLang: number;
 
   AllQuestions: Question[];
   QChoices: QuestionChoice[];
 
   currQuestion: Question;
+  title: String;
   currQChoices: QuestionChoice[];
   filteredQChoices: QuestionChoice[];
 
@@ -32,11 +34,16 @@ export class Page1Component implements OnInit {
 
     this.questionNumber = 1;
 
+    //hakee valitun kielen
+    this.langSelect();
+
+    //hakee vaihtoehdot
     this.qChoiceService.getAllChoices().subscribe(response => {
       this.QChoices = response;
       this.sortQuestionChoices(this.questionNumber);
     });
 
+    //hakee aiheen kysymysosiolle
     this.questionService.getAllQuestions().subscribe(res => {
       this.AllQuestions = res;
       this.currQuestion = this.AllQuestions[this.questionNumber - 1];
@@ -151,6 +158,11 @@ export class Page1Component implements OnInit {
       }
     }
   }
+
+   langSelect()  //joko fi tai eng
+   {
+      this.selectedLang = this.summaServ.getLang();
+   }
 }
 
 

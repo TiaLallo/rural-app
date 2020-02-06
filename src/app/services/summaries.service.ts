@@ -10,9 +10,10 @@ export class SummariesService {
 
   private summaries: Summary[] = [];
   private person: Person;
+  private langSelected: number;  // 0 = FI 1 = EN
   constructor()
   {
-
+    this.langSelected = 0;
   }
 
   clearSummaries()
@@ -38,6 +39,16 @@ export class SummariesService {
   getPerson(): Person
   {
     return this.person;
+  }
+
+  updateLang(selection)
+  {
+    this.langSelected = selection;
+  }
+
+  getLang()
+  {
+    return this.langSelected;
   }
 }
 
