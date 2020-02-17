@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {QuestionChoiceHttpService} from './question-choice-http.service';
+import {LoaderService} from '../loader/loader.service';
 import {QuestionChoice} from '../Person/question-choice';
 import {Observable} from 'rxjs';
 

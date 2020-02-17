@@ -17,7 +17,7 @@ div {
 
 .login-button {
   color: black;
-  margin-bottom: 10%;
+  margin: 1%;
 }
 .login-button:hover {
   background-color: #fad1c5;
@@ -26,13 +26,13 @@ div {
 
 input {
   width: fit-content;
-  text-align: match-parent;
+  text-align: justify-all;
   margin-bottom: 1%;
 }
 
 mat-form-field {
   height: fit-content;
-  width: min-content;
+  width:90%;
   font-size: 20px;
   font-weight: 100;
 }
@@ -41,4 +41,8 @@ p {
   color: #7f227a;
 }
 
+.material-icons {
+  margin-right: 3%;
+  color: #7f227a;
+}
 
