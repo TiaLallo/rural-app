@@ -14,9 +14,10 @@ import {SummariesService} from "../../services/summaries.service";
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component implements OnInit {
-
+  title = 'angular-loader';
   public questionNumber: any;
   private selectedLang: number;
+
 
   AllQuestions: Question[];
   QChoices: QuestionChoice[];
@@ -49,6 +50,12 @@ export class Page1Component implements OnInit {
       this.currQuestion = this.AllQuestions[this.questionNumber - 1];
     });
 
+    // newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
+    this.newSummary[0] = new Summary();
+    this.newSummary[1] = new Summary();
+    this.newSummary[2] = new Summary();
+    this.newSummary[3] = new Summary();
+  }
     //jos aikaisemmin tallennettua dataa hakee sen että vahinko painallus takaisin ei resetoi tekemistä
     this.summaServ.routeData().subscribe(res =>{
       this.savedSummaries = res;

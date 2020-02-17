@@ -1,3 +1,4 @@
+
 <header></header>
 <div *ngIf="selectedLang == 0" fxLayoutAlign="center center">
   <p *ngIf="currQuestion != undefined">{{currQuestion.title_FI}}</p>
@@ -6,10 +7,9 @@
   <p *ngIf="currQuestion != undefined">{{currQuestion.title_EN}}</p>
 </div>
 
-<div fxLayoutAlign="center center" class="guide">
+<div fxLayoutAlign="top center" fxLayout="column">
+  <p *ngIf="currQuestion != undefined">{{currQuestion.title_FI}}</p>
   <p>Muista valita arvo kunkin sanaparin molemmille puolille!</p>
-</div>
-
 
 <table *ngIf="selectedLang == 0" fxLayoutAlign="center center">
   <tr>
@@ -72,8 +72,6 @@
     <button mat-raised-button (click)="nextQuestions()">Seuraava</button>
   </nav>
 </table>
-
-<div class="progress-bar">
   <mat-progress-bar mode="determinate" value="14"></mat-progress-bar>
 </div>
 

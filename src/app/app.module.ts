@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatCheckboxModule, MatProgressBarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatCheckboxModule, MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material';
 import { Page1Component } from './pages/page1/page1.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -23,7 +23,7 @@ import { Page6Component } from './pages/page6/page6.component';
 import { Page7Component } from './pages/page7/page7.component';
 import { FinalComponent } from './pages/final/final.component';
 import { CardComponent } from './pages/card/card.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {SummaryHttpService} from './services/summary-http.service';
 import {PersonHttpService} from './services/person-http.service';
 import {QuestionChoiceHttpService} from './services/question-choice-http.service';
@@ -41,6 +41,9 @@ import {AuthService} from './user/services/auth.service';
 import {AuthGuard} from './user/guard/auth.guard';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
+import { LoaderComponent } from './/loader/loader.component';
+import {LoaderService} from './loader/loader.service';
+import {LoaderInterceptor} from './loader/loader-interceptor';
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Matkailukysely'}},
   {path: 'page', component: PageComponent},
@@ -77,6 +80,7 @@ const appRoutes: Routes = [
     MainNavComponent,
     LoginComponent,
     AdminViewComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,8 +101,9 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatProgressSpinnerModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
-    AngularFireAuthModule,
+    AngularFireAuthModule
   ],
   providers: [
     PersonHttpService,
@@ -111,6 +116,8 @@ const appRoutes: Routes = [
     SummaryHttpService,
     AuthService,
     AuthGuard,
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

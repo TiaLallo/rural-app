@@ -1,29 +1,19 @@
 
-<div fxLayoutAlign="center center">
-
-
+<div fxLayoutAlign="top center">
   <mat-card fxLayout="column" fxLayoutAlign="top center">
-  <p style="height: 40px;">Admin login</p>
-
-
-    <mat-form-field appearance="outline" style="height: 100px;">
+  <p style="height: 30px;">Admin login</p>
+    <mat-form-field appearance="outline">
       <mat-icon class="material-icons" color="primary">email</mat-icon>
       <input matInput type="text" [(ngModel)]="email" placeholder="email">
     </mat-form-field>
-
-    <mat-form-field appearance="outline" style="height: 100px;">
+    <mat-form-field appearance="outline">
       <mat-icon class="material-icons" color="primary">lock</mat-icon>
       <input matInput type="password" [(ngModel)]="password" placeholder="password">
     </mat-form-field>
-
-    <mat-card-actions>
-    <button class="login-button" mat-raised-button routerLink="/home">
-      Back
-    </button>
-    <button class="login-button" mat-raised-button (click)="login()">
-    Login
-  </button>
-    </mat-card-actions>
+    <nav align="center" fxLayout="row">
+    <button class="login-button" mat-raised-button routerLink="/home">Back</button>
+    <button class="login-button" mat-raised-button (click)="login()">Login</button>
+    </nav>
   </mat-card>
 </div>
 
