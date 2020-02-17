@@ -25,7 +25,7 @@ import { FinalComponent } from './pages/final/final.component';
 import { CardComponent } from './pages/card/card.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {SummaryHttpService} from './services/summary-http.service';
-import {HttpService} from './services/http.service';
+import {PersonHttpService} from './services/person-http.service';
 import {QuestionChoiceHttpService} from './services/question-choice-http.service';
 import {QuestionHttpService} from './services/question-http.service';
 import {PersonService} from './services/person.service';
@@ -106,7 +106,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule
   ],
   providers: [
-    HttpService,
+    PersonHttpService,
     PersonService,
     QuestionService,
     QuestionHttpService,

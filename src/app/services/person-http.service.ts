@@ -8,12 +8,12 @@ import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService {
+export class PersonHttpService {
 
   url: string;
 
   constructor(private httpClient: HttpClient) {
-    this.url = environment.apiEndpointUrl + 'api/person';
+    this.url = environment.apiEndpointUrl + '/api/person';
   }
 
   getAll(): Observable<Person[]> {
