@@ -14,8 +14,9 @@ import {forEach} from '@angular/router/src/utils/collection';
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component implements OnInit {
-
+  title = 'angular-loader';
   public questionNumber: any;
+
 
   AllQuestions: Question[];
   QChoices: QuestionChoice[];
@@ -37,12 +38,12 @@ export class Page1Component implements OnInit {
       this.sortQuestionChoices(this.questionNumber);
     });
 
-    this.questionService.getAllQuestions().subscribe(res =>{
+    this.questionService.getAllQuestions().subscribe(res => {
       this.AllQuestions = res;
       this.currQuestion = this.AllQuestions[this.questionNumber - 1];
     });
 
-    //newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
+    // newList summaries ja sit ku kaikki täytetty ja painaa nappi eteenpäin -> tallennus
     this.newSummary[0] = new Summary();
     this.newSummary[1] = new Summary();
     this.newSummary[2] = new Summary();
