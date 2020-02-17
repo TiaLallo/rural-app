@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {Summary} from '../../Person/summary';
 import {QuestionChoice} from '../../Person/question-choice';
 import {QuestionService} from '../../services/question.service';
-import {SummariesService} from "../../services/summaries.service";
+import {SummariesService} from '../../services/summaries.service';
 
 @Component({
   selector: 'app-page1',
