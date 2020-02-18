@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SummariesService} from "../../services/summaries.service";
+import {SummariesService} from '../../services/summaries.service';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +16,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  langFI()
-  {
+  langFI() {
     this.sumServ.updateLang(0);
   }
 
-  langEN()
-  {
+  langEN() {
     this.sumServ.updateLang(1);
   }
 }
