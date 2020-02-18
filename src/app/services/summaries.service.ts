@@ -12,7 +12,6 @@ export class SummariesService {
   private person: Person;
   private langSelected: number;  // 0 = FI 1 = EN
   constructor() {
-    this.langSelected = 0;
   }
 
   clearSummaries()
