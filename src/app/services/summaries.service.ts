@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Summary} from "../Person/summary";
-import {Observable, of} from "rxjs";
-import {Person} from "../Person/person";
+import {Summary} from '../Person/summary';
+import {Observable, of} from 'rxjs';
+import {Person} from '../Person/person';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,7 @@ export class SummariesService {
   private summaries: Summary[] = [];
   private person: Person;
   private langSelected: number;  // 0 = FI 1 = EN
-  constructor()
-  {
+  constructor() {
     this.langSelected = 0;
   }
 
