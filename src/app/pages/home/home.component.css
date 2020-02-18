@@ -8,14 +8,13 @@ div {
   font-weight: 100;
   color: #7f227a;
 }
-p{
-  margin-top: 27%;
-  margin-left: 5%;
-  margin-right: 5%;
+h4{
+  font-family: "Calibri Light";
+  font-weight: 100;
 }
 button {
   color: white;
-  margin-bottom: 60%;
+  margin: 1%;
 }
 button:hover {
   background-color: #fad1c5;
