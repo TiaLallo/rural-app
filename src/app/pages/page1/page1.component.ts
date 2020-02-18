@@ -22,7 +22,7 @@ export class Page1Component implements OnInit {
   QChoices: QuestionChoice[];
 
   currQuestion: Question;
-  title: String;
+  title: string;
   currQChoices: QuestionChoice[];
   filteredQChoices: QuestionChoice[];
 
