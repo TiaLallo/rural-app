@@ -1,8 +1,16 @@
 
-<div fxLayoutAlign="top center" fxLayout="column">
+<div *ngIf="selectedLang == 0" fxLayoutAlign="top center" fxLayout="column">
 <p>Kiitos vastauksistasi!</p>
 
 <nav align="center">
   <button mat-raised-button routerLink="/home">Etusivulle</button>
 </nav>
+</div>
+
+<div *ngIf="selectedLang == 1" fxLayoutAlign="top center" fxLayout="column">
+  <p>Thank you for your answers!</p>
+
+  <nav align="center">
+    <button mat-raised-button *ngIf="selectedLang == 1" routerLink="/home">Front Page</button>
+  </nav>
 </div>

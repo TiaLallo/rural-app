@@ -12,6 +12,7 @@ import {PersonService} from "../../services/person.service";
 })
 export class CardComponent implements OnInit {
 
+  private selectedLang: number;
   private summary: Summary;
   private summaries: Summary[] = [];
   private person: Person;
@@ -24,6 +25,8 @@ export class CardComponent implements OnInit {
     {
       this.summaries = res;
     });
+
+    this.selectedLang = this.sumServices.getLang();
   }
 
   ngOnInit() {

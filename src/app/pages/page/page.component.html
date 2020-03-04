@@ -1,4 +1,5 @@
 <div fxLayoutAlign="top center" fxLayout="column">
+  <div *ngIf="selectedLang == 0">
   <h2>Miten matkailija valitsee matkakohteensa? Minkälainen matkailija sinä olet?</h2>
     <h4>Tämä lyhyt kysely kartoittaa matkallelähdön motiiveja
     muutamalla kysymyssarjalla, joissa ei haeta joko/tai vastauksia.<br>
@@ -14,6 +15,22 @@
   valitse arvo jokaiselle väittämälle asteikolta 0-10<br>
   0 = Ei lainkaan tärkeä<br>
   10 = Erittäin tärkeä</h4>
+  </div>
+
+  <div *ngIf="selectedLang == 1">
+    <h2>How does a traveler choose their destination? What kind of a traveler are you?</h2>
+    <h4>This short query is mapping the motives for taking a trip with a few series of questions which are not this or that questions.<br>
+      So you can want from your travels alot of rest, but also some amount of action.<br>
+      Or you can look for for new destinations each time, but every now and then a familiar place is calling to you.<br>
+      This information is used to improve and develop travel products and destinations.<br>
+      Our objective is to understand a traveler more deeply and to better adapt for the needs of different travelers expectations.<br><br>
+      The query has been developed as a part of the Rural Explorer - countryside culture traveling development program.<br></h4>
+
+    <h4>This is how to answer to th questions:<br>
+      Choose a value for each side of the answers from 0-10<br>
+      0 = Not important at all<br>
+      10 = Very important</h4>
+  </div>
 
   <nav align="center" fxLayout="row">
   <button mat-raised-button routerLink="/home">Edellinen</button>
@@ -21,20 +38,3 @@
   </nav>
   <button mat-raised-button routerLink="/page1">Kysymyksiin</button>
 </div>
-
-<!--
-<h2>How does a traveler choose their destination? What kind of a traveler are you?</h2>
-<h4>This short query is mapping the motives for taking a trip with a few series of questions which are not this or that questions.<br>
-  So you can want from your travels alot of rest, but also some amount of action.<br>
-  Or you can look for for new destinations each time, but every now and then a familiar place is calling to you.<br>
-  This information is used to improve and develop travel products and destinations.<br>
-  Our objective is to understand a traveler more deeply and to better adapt for the needs of different travelers expectations.<br><br>
-  The query has been developed as a part of the Rural Explorer - countryside culture traveling development program.<br></h4>
-
-<h4>This is how to answer to th questions:<br>
-  Choose a value for each side of the answers from 0-10<br>
-  0 = Not important at all<br>
-  10 = Very important</h4>
-
-
-->
