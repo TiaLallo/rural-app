@@ -1,17 +1,36 @@
 
-<div align="center">
+<div *ngIf="selectedLang == 0" align="center">
   <mat-card class="card" fxLayoutAlign="center center" fxLayout="column">
-  <mat-card-header>
-    <mat-card-title>Haluatko tallentaa?</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      Sinua ei voida tunnistaa antamiesi tietojen perusteella. <br> Olet tallentamassa vastauksiasi, painamalla OK lopetat kyselyn ja hyväksyt vastausten tallentamisen.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="sendAnswer()" routerLink="/final">OK</button>
-    <button mat-raised-button routerLink="/page1">En ole valmis</button>
-  </mat-card-actions>
-</mat-card>
+    <mat-card-header>
+      <mat-card-title>Haluatko tallentaa?</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Sinua ei voida tunnistaa antamiesi tietojen perusteella. <br>
+        Olet tallentamassa vastauksiasi, painamalla OK lopetat kyselyn ja hyväksyt vastausten tallentamisen.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="sendAnswer()" routerLink="/final">OK</button>
+      <button mat-raised-button routerLink="/page1">En ole valmis</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div *ngIf="selectedLang == 1" align="center">
+  <mat-card class="card" fxLayoutAlign="center center" fxLayout="column">
+    <mat-card-header>
+      <mat-card-title>Do you wish to save the answers?</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        You cannot be identified with the information you hav given. <br>
+        You are about to save and send the answers, by pressing OK, you will end the query and accept sending the answers.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="sendAnswer()" routerLink="/final">OK</button>
+      <button mat-raised-button routerLink="/page1">I'm not ready</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

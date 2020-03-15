@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SummariesService} from "../../services/summaries.service";
 
 @Component({
   selector: 'app-final',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinalComponent implements OnInit {
 
-  constructor() { }
+  private selectedLang: number;
+
+  constructor(private summaServ: SummariesService) {
+
+    this.selectedLang = this.summaServ.getLang();
+  }
 
   ngOnInit() {
   }

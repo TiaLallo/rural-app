@@ -44,6 +44,7 @@ import {environment} from '../environments/environment';
 import { LoaderComponent } from './/loader/loader.component';
 import {LoaderService} from './loader/loader.service';
 import {LoaderInterceptor} from './loader/loader-interceptor';
+
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Matkailukysely'}},
   {path: 'page', component: PageComponent},
