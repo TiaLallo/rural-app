@@ -8,8 +8,7 @@ import {SummariesService} from '../../services/summaries.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private sumServ: SummariesService)
-  {
+  constructor(private sumServ: SummariesService) {
 
   }
 
