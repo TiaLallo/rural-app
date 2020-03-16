@@ -15,8 +15,8 @@ export const environment = {
     appId: ':227605693127:web:acd4bbdc13cbe5965734e2'
   },
 
-  //apiEndpointUrl: 'https://ruralapi2019v1.azurewebsites.net',
-  apiEndpointUrl: 'https://localhost:44304',
+  apiEndpointUrl: 'https://ruralapi2019v1.azurewebsites.net',
+  //apiEndpointUrl: 'https://localhost:44304',
   apiEnabled: true
 };
 
