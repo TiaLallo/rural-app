@@ -103,7 +103,7 @@ export class Page1Component implements OnInit {
   }
 
   nextQuestions() {
-    if (this.questionNumber == 2)  // real value 7, 2 for testing
+    if (this.questionNumber == 7)  // real value 7, 2 for testing
     {
       this.saveAnswer();
       this.summaServ.clearSummaries();
