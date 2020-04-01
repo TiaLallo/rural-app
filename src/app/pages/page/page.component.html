@@ -1,3 +1,4 @@
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162432480-1"></script>
@@ -10,7 +11,9 @@
   </script>
 </head>
 
-<div fxLayoutAlign="top center" fxLayout="column">
+
+<div fxLayoutAlign="top center" fxLayout="column" id="full">
+
   <div *ngIf="selectedLang == 0">
   <h2>Miten matkailija valitsee matkakohteensa? Minkälainen matkailija sinä olet?</h2>
     <h4>Tämä lyhyt kysely kartoittaa matkallelähdön motiiveja
@@ -45,7 +48,7 @@
   </div>
 
   <nav align="center" fxLayout="row">
-  <button mat-raised-button routerLink="/home">Edellinen</button>
-  <button mat-raised-button routerLink="/page1">Kysymyksiin</button>
+  <button mat-raised-button routerLink="/home">Edellinen/Previous</button>
+  <button mat-raised-button routerLink="/page1">Kysymyksiin/Questions</button>
   </nav>
 </div>
