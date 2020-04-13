@@ -17,6 +17,7 @@ div{
 }
 p {
     margin-bottom: 1%;
+    font-family: "Architects Daughter", cursive;
   }
 
 .guide {
@@ -50,7 +51,11 @@ td {
   font-weight: 100;
 }
 
-.align {
+.align-right {
   text-align: right;
+}
+
+.align-left {
+  text-align: left;
 }
 
