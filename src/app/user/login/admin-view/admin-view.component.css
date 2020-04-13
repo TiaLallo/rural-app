@@ -1,17 +1,18 @@
 
-mat-card {
-  max-width: 400px;
-  margin: 2em auto;
-  align-content: center;
+button {
+  background-color: #ffa72d;
+  color: #fafff8;
+  margin: 1%;
+}
+
+button:hover {
+  background-color: #fad1c5;
+  color: black;
 }
 
 div {
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
-  color: darkblue;
-  text-align: center;
-  font-family: "Calibri Light";
-  font-weight: 100;
-  font-size: 50px;
+
 }
