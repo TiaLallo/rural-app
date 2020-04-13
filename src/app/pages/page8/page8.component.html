@@ -11,8 +11,6 @@
 </head>
 <div fxLayoutAlign="top center" fxLayout="column">
   <h4>Sinua ei voida tunnistaa antamiesi tietojen perusteella</h4>
-  
-  <tr>
     <mat-form-field class="top">
       <mat-select placeholder="Sukupuoli" (selectionChange)="changeSex($event.value)"  required>
         <mat-option value="Female" >Nainen</mat-option>
@@ -20,13 +18,9 @@
         <mat-option value="Other">Muu</mat-option>
       </mat-select>
     </mat-form-field>
-  </tr>
-  <tr>
     <mat-form-field>
       <input matInput [(ngModel)]="this.person.Age" type="number" max="99" placeholder="Ikä" min="0" required>
     </mat-form-field>
-  </tr>
-  <tr>
     <mat-form-field class="bottom">
       <mat-select placeholder="Kansallisuus" (selectionChange)="changeNat($event.value)" required>
         <mat-option value="FIN">FIN</mat-option>
@@ -36,8 +30,6 @@
         <mat-option value="Other">Other</mat-option>
       </mat-select>
     </mat-form-field>
-  </tr>
-
   <nav fxLayoutAlign="center center" fxLayout="row">
     <button mat-raised-button routerLink="/page1">Edellinen / Previous</button>
     <button mat-raised-button (click)="finalData()" routerLink="/alert">Valmis / Ready</button>
