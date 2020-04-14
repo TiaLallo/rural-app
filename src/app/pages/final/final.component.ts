@@ -8,7 +8,7 @@ import {SummariesService} from "../../services/summaries.service";
 })
 export class FinalComponent implements OnInit {
 
-  private selectedLang: number;
+  public selectedLang: number;
 
   constructor(private summaServ: SummariesService) {
 

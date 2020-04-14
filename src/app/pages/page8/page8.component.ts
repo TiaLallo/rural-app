@@ -15,7 +15,7 @@ export class Page8Component implements OnInit {
 
   private summaries: Summary[] = [];
 
-  private person: Person;
+  public person: Person;
 
   constructor(private summaryService: SummaryService, private summariesService: SummariesService, private personService: PersonService, private personhttp: PersonHttpService)
   {

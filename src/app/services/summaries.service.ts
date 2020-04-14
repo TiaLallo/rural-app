@@ -18,27 +18,22 @@ export class SummariesService {
   {
     this.summaries = [];
   }
-
   updateSummaries(data)
   {
     this.summaries.push(data);
   }
-
   routeData(): Observable<Summary[]>
   {
     return of(this.summaries);
   }
-
   updatePerson(dataPerson)
   {
     this.person = dataPerson;
   }
-
   getPerson(): Person
   {
     return this.person;
   }
-
   updateLang(selection)
   {
     this.langSelected = selection;

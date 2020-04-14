@@ -16,7 +16,7 @@ import {SummariesService} from "../../services/summaries.service";
 export class Page1Component implements OnInit {
 
   public questionNumber: any;
-  private selectedLang: number;
+  public selectedLang: number;
 
   AllQuestions: Question[];
   QChoices: QuestionChoice[];

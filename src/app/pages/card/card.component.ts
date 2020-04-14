@@ -12,10 +12,10 @@ import {PersonService} from "../../services/person.service";
 })
 export class CardComponent implements OnInit {
 
-  private selectedLang: number;
+  public selectedLang: number;
   private summary: Summary;
   private summaries: Summary[] = [];
-  private person: Person;
+  public person: Person;
   private person2: Person;
   private persons: Person[];
 
